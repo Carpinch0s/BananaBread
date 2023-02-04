@@ -19,31 +19,31 @@ func _ready():
 
 #Data functions
 func setName(newName):
-    ingredientName = newName
+	ingredientName = newName
 
 func setAge(newAge):
-    age = newAge
-    
+	age = newAge
+	
 func getName():
-    return ingredientName
-    
+	return ingredientName
+	
 func getAge():
-    return age
-    
+	return age
+	
 #Doing stuff functions
 func toggleSelected():
-    #If the object is selected remove it from the selected group
-    if isSelected:
-        isSelected = false
-        remove_from_group("selected")
-    #If the object is not selected add it to the selected group
-    else:
-        isSelected = true
-        add_to_group("selected")
-        
+	#If the object is selected remove it from the selected group
+	if isSelected:
+		isSelected = false
+		remove_from_group("selected")
+	#If the object is not selected add it to the selected group
+	else:
+		isSelected = true
+		add_to_group("selected")
+		
 func ageIngredient():
-    age -= 1
-    
+	age -= 1
+	
 func removeIngredient():
-    #todo: add ingredient
-    queue_free()
+	#todo: add ingredient
+	queue_free()
