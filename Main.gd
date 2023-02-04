@@ -8,17 +8,15 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var rowData0 = $RecipeManager.generateNewRow()
-	$UpcomingIngredientPanel.addRow(rowData0)
+	var rowData0 = $RecipeManager.generateNewIngredients(3)
+	$UpcomingIngredientPanel.addIngredients(rowData0)
 	
-	var rowData1 = $RecipeManager.generateNewRow()
-	$UpcomingIngredientPanel.addRow(rowData1)
+	var rowData1 = $RecipeManager.generateNewIngredients(3)
+	$UpcomingIngredientPanel.addIngredients(rowData1)
 	
-	var rowData3 = $RecipeManager.generateNewRow()
-	$UpcomingIngredientPanel.addRow(rowData2)
+	var rowData2 = $RecipeManager.generateNewIngredients(3)
+	$UpcomingIngredientPanel.addIngredients(rowData2)
 	
-	var inventoryData = $RecipeManager.generateNewRow()
+	var inventoryData = $RecipeManager.generateNewIngredients(3)
 	$InventoryPanel.addIngredients(inventoryData)
-	
-	
 	

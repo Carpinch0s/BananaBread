@@ -1,11 +1,30 @@
 extends Node
 
-var ingredients = [
-	"Banana",
-	"Flour",
-	"Egg",
-	"Sugar"
-]
+var ingredients = {
+	"banana" : {
+		"name": "Banana",
+		"img": "banana.png",
+		"expiration" : 2
+	},
+	
+	"flour" : {
+		"name": "Flour",
+		"img": "flour.png",
+		"expiration" : 7
+	},
+	
+	"egg" : {
+		"name": "Egg",
+		"img": "egg.png",
+		"expiration" : 4
+	},
+	
+	"sugar" : {
+		"name": "Sugar",
+		"img": "sugar.png",
+		"expiration" : 8
+	},
+}
 
 var dishOptions = [
 	{
@@ -41,10 +60,11 @@ var dishOptions = [
 func _ready():
 	pass # Replace with function body.
 
-func generateNewRow():
+func generateNewIngredients(count):
 	var row = []
-	for i in range(3):
-		var index = randi() % ingredients.size()
-		row.append(ingredients[index])
+	var values = ingredients.values()
+	for _i in range(count):
+		var index = randi() % values.size()
+		row.append(values[index])
 
-	$UpcomingIngredientPanel.addIngredients(row)
+	return row
