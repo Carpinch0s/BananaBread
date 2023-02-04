@@ -45,5 +45,5 @@ func ageIngredient():
 	age -= 1
 	
 func removeIngredient():
-	#todo: add ingredient
+	#Do removal stuff
 	queue_free()
