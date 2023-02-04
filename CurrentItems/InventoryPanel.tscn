@@ -4,73 +4,81 @@
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 1023.0
-margin_bottom = 601.0
+[node name="Background" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 144.0
 color = Color( 0.870588, 0.454902, 0.803922, 1 )
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="InventoryHbox" type="HBoxContainer" parent="."]
 margin_right = 1024.0
-margin_bottom = 600.0
+margin_bottom = 144.0
 custom_constants/separation = 0
 
-[node name="ColorRect" type="ColorRect" parent="HBoxContainer"]
+[node name="ColorRect" type="ColorRect" parent="InventoryHbox"]
 margin_right = 100.0
-margin_bottom = 600.0
+margin_bottom = 144.0
 rect_min_size = Vector2( 100, 0 )
 color = Color( 0.14902, 1, 0, 1 )
 
-[node name="ColorRect2" type="ColorRect" parent="HBoxContainer"]
+[node name="ColorRect2" type="ColorRect" parent="InventoryHbox"]
 margin_left = 100.0
 margin_right = 200.0
-margin_bottom = 600.0
+margin_bottom = 144.0
 rect_min_size = Vector2( 100, 0 )
 color = Color( 1, 0, 0, 1 )
 
-[node name="ColorRect3" type="ColorRect" parent="HBoxContainer"]
+[node name="ColorRect3" type="ColorRect" parent="InventoryHbox"]
 margin_left = 200.0
 margin_right = 300.0
-margin_bottom = 600.0
+margin_bottom = 144.0
 rect_min_size = Vector2( 100, 0 )
 color = Color( 0.14902, 1, 0, 1 )
 
-[node name="ColorRect4" type="ColorRect" parent="HBoxContainer"]
+[node name="ColorRect4" type="ColorRect" parent="InventoryHbox"]
 margin_left = 300.0
 margin_right = 400.0
-margin_bottom = 600.0
+margin_bottom = 144.0
 rect_min_size = Vector2( 100, 0 )
 color = Color( 1, 0, 0, 1 )
 
-[node name="ColorRect5" type="ColorRect" parent="HBoxContainer"]
+[node name="ColorRect5" type="ColorRect" parent="InventoryHbox"]
 margin_left = 400.0
 margin_right = 500.0
-margin_bottom = 600.0
+margin_bottom = 144.0
 rect_min_size = Vector2( 100, 0 )
 color = Color( 0.14902, 1, 0, 1 )
 
-[node name="ColorRect6" type="ColorRect" parent="HBoxContainer"]
+[node name="ColorRect6" type="ColorRect" parent="InventoryHbox"]
 margin_left = 500.0
 margin_right = 600.0
-margin_bottom = 600.0
+margin_bottom = 144.0
 rect_min_size = Vector2( 100, 0 )
 color = Color( 1, 0, 0, 1 )
 
-[node name="ColorRect7" type="ColorRect" parent="HBoxContainer"]
+[node name="ColorRect7" type="ColorRect" parent="InventoryHbox"]
 margin_left = 600.0
 margin_right = 700.0
-margin_bottom = 600.0
+margin_bottom = 144.0
 rect_min_size = Vector2( 100, 0 )
 color = Color( 0.14902, 1, 0, 1 )
 
-[node name="ColorRect8" type="ColorRect" parent="HBoxContainer"]
+[node name="ColorRect8" type="ColorRect" parent="InventoryHbox"]
 margin_left = 700.0
 margin_right = 800.0
-margin_bottom = 600.0
+margin_bottom = 144.0
 rect_min_size = Vector2( 100, 0 )
 color = Color( 1, 0, 0, 1 )
 
-[node name="Empty" type="ColorRect" parent="HBoxContainer"]
+[node name="ColorRect9" type="ColorRect" parent="InventoryHbox"]
 margin_left = 800.0
-margin_right = 800.0
-margin_bottom = 600.0
-color = Color( 0.992157, 0, 1, 1 )
+margin_right = 900.0
+margin_bottom = 144.0
+rect_min_size = Vector2( 100, 0 )
+color = Color( 0.14902, 1, 0, 1 )
+
+[node name="ColorRect10" type="ColorRect" parent="InventoryHbox"]
+margin_left = 900.0
+margin_right = 1000.0
+margin_bottom = 144.0
+rect_min_size = Vector2( 100, 0 )
+color = Color( 1, 0, 0, 1 )
