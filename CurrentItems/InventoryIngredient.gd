@@ -1,12 +1,13 @@
 extends Area2D
 
+class_name InventoryIngredient
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
 
-var ingredientName = "Ingredient"
-var age = 0
-var isSelected = false
+var ingredientName: String
+var age: int
+var isSelected: bool
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,19 +18,12 @@ func _ready():
 #func _process(delta):
 #	pass
 
-#Data functions
-func setName(newName):
+func init(newName=String, newAge=int):
 	ingredientName = newName
-
-func setAge(newAge):
 	age = newAge
-	
-func getName():
-	return ingredientName
-	
-func getAge():
-	return age
-	
+	isSelected = false
+	print("Ingredient " + ingredientName + " created with age " + str(age))
+
 #Doing stuff functions
 func toggleSelected():
 	#If the object is selected remove it from the selected group
@@ -43,7 +37,3 @@ func toggleSelected():
 		
 func ageIngredient():
 	age -= 1
-	
-func removeIngredient():
-	#Do removal stuff
-	queue_free()
