@@ -1,5 +1,6 @@
 extends Node
 
+<<<<<<< HEAD
 var ingredients = {
 	"banana" : {
 		"name": "Banana",
@@ -25,41 +26,18 @@ var ingredients = {
 		"expiration" : 8
 	},
 }
+=======
+# Declare member variables here. Examples:
+# var a = 2
+# var b = "text"
+>>>>>>> 7726d76 (added most of the logic for the arrays)
 
-var dishOptions = [
-	{
-		"name": "Banana Bread",
-		"ingredients" : ["Banana", "Flour", "Egg", "Sugar"],
-		"cookware": "OvenDish",
-		"sprite": "temp.png"
-	},
-
-	{
-		"name": "Banana Bread",
-		"ingredients": ["Banana", "Flour", "Egg"],
-		"cookware": "OvenDish",
-		"sprite": "temp.png"
-	},
-
-	{
-		"name": "Bananas Foster",
-		"ingredients": ["Banana", "Sugar"],
-		"cookware": "Pan",
-		"sprite": "temp.png"
-	},
-
-	{
-		"name": "Bananas Foster",
-		"ingredients": ["Banana", "Sugar", "Milk"],
-		"cookware": "Pan",
-		"sprite": "temp.png"
-	}
-]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
+<<<<<<< HEAD
 func generateNewIngredients(count):
 	var row = []
 	var values = ingredients.values()
@@ -68,3 +46,9 @@ func generateNewIngredients(count):
 		row.append(values[index])
 
 	return row
+=======
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+>>>>>>> 7726d76 (added most of the logic for the arrays)
