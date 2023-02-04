@@ -8,10 +8,17 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var x = 7
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	var rowData0 = $RecipeManager.generateNewRow()
+	$UpcomingIngredientPanel.addRow(rowData0)
+	
+	var rowData1 = $RecipeManager.generateNewRow()
+	$UpcomingIngredientPanel.addRow(rowData1)
+	
+	var rowData3 = $RecipeManager.generateNewRow()
+	$UpcomingIngredientPanel.addRow(rowData2)
+	
+	var inventoryData = $RecipeManager.generateNewRow()
+	$InventoryPanel.addIngredients(inventoryData)
+	
+	
+	
