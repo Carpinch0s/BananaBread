@@ -1,5 +1,6 @@
+extends Area2D
+
 class_name InventoryIngredient
-extends Control
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -10,7 +11,6 @@ var isSelected: bool
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print("Ingredient " + ingredientName + " created with age " + str(age))
 	pass # Replace with function body.
 
 
@@ -18,11 +18,11 @@ func _ready():
 #func _process(delta):
 #	pass
 
-func init(newName = "default", newAge = 4):
+func init(newName=String, newAge=int):
 	ingredientName = newName
 	age = newAge
 	isSelected = false
-	
+	print("Ingredient " + ingredientName + " created with age " + str(age))
 
 #Doing stuff functions
 func toggleSelected():

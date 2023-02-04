@@ -10,13 +10,8 @@ func _ready():
 	#pass # Replace with function body.
 	
 	#if ingredientsList is empty, add a random ingredient
-	#if len(ingredientList) == 0:
-	var ingredientOne = InventoryIngredient.new()
-	spawnIngredientButton(ingredientOne)
-	#addIngredients([InventoryIngredient.new(), 
-	#InventoryIngredient.new(),
-	#InventoryIngredient.new()])
-	print("What the fuck")
+	if len(ingredientList) == 0:
+		addIngredients([InventoryIngredient.new("cheese",3),InventoryIngredient.new("egg",4),InventoryIngredient.new("bread",5)])
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -34,13 +29,11 @@ func addIngredients(ingredients):
 	if len(ingredientList) > maxIngredients:
 		for i in range(len(ingredients)):
 			ingredientList.pop_front()
-	for i in range(len(ingredientList)):
-		spawnIngredientButton(ingredientList[i])
 
 #This function ages the ingredients in the list and removes them if they are too old
 func ageIngredients():
 	for i in range(len(ingredientList)):
-		ingredientList[i].ageIngredient()
+		ingredientList[i].ageIngredient
 		
 		#if the ingredient is too old, add it to the list of ingredients to remove
 		if ingredientList[i].age <= 0:
@@ -54,10 +47,6 @@ func ageIngredients():
 #Generate a button for an ingredient
 func generateIngredientButton(ingredient):
 	var button = Button.new()
-	button.text = ingredient.ingredientName
+	button.text = ingredient.name
 	button.connect("pressed", self, "onIngredientButtonPressed", [ingredient])
 	return button
-	
-func spawnIngredientButton(ingredient):
-	var button = generateIngredientButton(ingredient)
-	get_node("InventoryHbox").add_child(button)
