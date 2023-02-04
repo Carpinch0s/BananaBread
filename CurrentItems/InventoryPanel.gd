@@ -15,6 +15,6 @@ func _ready():
 
 #This function removes the first item in the ingredientsList array.
 func pushIngredients():
-	ingredientList.pop_front()
-	#if you want to return this edit it here
-		
+
+    ingredientList.pop_front()
+    #if you want to return this edit it here
