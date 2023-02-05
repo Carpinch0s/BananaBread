@@ -1,5 +1,6 @@
 extends Area2D
 
-# Called when the node enters the scene tree for the first time.
+export(Texture) var foodImage
+
 func _ready():
-	pass # Replace with function body.
+	$Control/Sprite.texture = foodImage
