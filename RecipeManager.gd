@@ -31,7 +31,7 @@ var dishOptions = [
 		"name": "Banana Bread",
 		"ingredients" : ["Banana", "Flour", "Egg", "Sugar"],
 		"cookware": "OvenDish",
-		"sprite": "temp.png"
+		"sprite": load("res://Images/BananaBread.png")
 	},
 
 	{
@@ -58,7 +58,10 @@ var dishOptions = [
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	randomize()
+	
+func getFinishedDish(_cookwareType, _ingredients):
+	return dishOptions[0]
 
 func generateNewIngredients(count):
 	var row = []
@@ -67,4 +70,5 @@ func generateNewIngredients(count):
 		var index = randi() % values.size()
 		row.append(values[index])
 
+	print("row = " + str(row))
 	return row

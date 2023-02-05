@@ -1,6 +1,6 @@
 extends Node
 
-export(PackedScene) var cookwareScene
+export(PackedScene) var finishedDishScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,11 +16,18 @@ func _ready():
 	var inventoryData = $RecipeManager.generateNewIngredients(3)
 	$InventoryPanel.addIngredients(inventoryData)
 	
-func _on_CookwarePressed(id):
-	var string = "clicked on " + id
-	print(string)
-	var completedItem = cookwareScene.instance()
-	completedItem.position = Vector2(10,10)
-	completedItem.Type = "Grill"
-	add_child(completedItem)
+	
+func _on_CookwarePressed(cookwareType):
+	var string = "clicked on " + cookwareType
+	
+	# temp ingredients
+	var ingredients = ["banana"]
+	var finishedDishData = $RecipeManager.getFinishedDish(cookwareType, ingredients)
+	
+	var finishedDish = finishedDishScene.instance()
+	finishedDish.name = finishedDishData.name
+	finishedDish.position = $FinishedDishSpawnLocation.position
+	finishedDish.foodImage = finishedDishData.sprite
+	
+	add_child(finishedDish)
 	
