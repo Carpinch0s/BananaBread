@@ -27,9 +27,9 @@ position = Vector2( 112, 262 )
 Type = "Cookpot"
 BoxColor = Color( 0.152941, 0.568627, 0.352941, 1 )
 
-[node name="OvenBreadpan" parent="." instance=ExtResource( 5 )]
+[node name="OvenDish" parent="." instance=ExtResource( 5 )]
 position = Vector2( 684, 76 )
-Type = "Breadpan"
+Type = "OvenDish"
 BoxColor = Color( 0.568627, 0.0745098, 0.541176, 1 )
 
 [node name="OvenCassarole" parent="." instance=ExtResource( 5 )]
@@ -47,6 +47,6 @@ position = Vector2( 312, 150 )
 
 [connection signal="CookwarePressed" from="Saucepan" to="." method="_on_CookwarePressed"]
 [connection signal="CookwarePressed" from="Cookpot" to="." method="_on_CookwarePressed"]
-[connection signal="CookwarePressed" from="OvenBreadpan" to="." method="_on_CookwarePressed"]
+[connection signal="CookwarePressed" from="OvenDish" to="." method="_on_CookwarePressed"]
 [connection signal="CookwarePressed" from="OvenCassarole" to="." method="_on_CookwarePressed"]
 [connection signal="CookwarePressed" from="Grill" to="." method="_on_CookwarePressed"]

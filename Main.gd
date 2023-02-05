@@ -23,6 +23,8 @@ func _on_CookwarePressed(cookwareType):
 	# temp ingredients
 	var ingredients = ["banana"]
 	var finishedDishData = $RecipeManager.getFinishedDish(cookwareType, ingredients)
+	if finishedDishData.name == "Invalid":
+		return
 	
 	var finishedDish = finishedDishScene.instance()
 	finishedDish.name = finishedDishData.name
