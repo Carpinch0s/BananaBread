@@ -7,6 +7,7 @@ extends Control
 var ingredientName: String
 var expiration: int
 var isSelected: bool
+var ingredientImage: Texture
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,7 +19,7 @@ func _ready():
 #func _process(delta):
 #	pass
 
-func _init(newName = "default", newAge = 4):
+func _init(newName = "default", newAge = 4, newImage = null):
 	ingredientName = newName
 	expiration = newAge
 	isSelected = false

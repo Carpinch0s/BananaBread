@@ -29,13 +29,17 @@ func pushIngredients():
 
 #Add ingredients to the list and remove the first item if the list is too long
 func addIngredients(ingredients):
-	ingredientList += ingredients
-	#If ingredientList is greater than maxIngredients, remove the first x items from the list that is the length of the ingredients
-	if len(ingredientList) > maxIngredients:
-		for i in range(len(ingredients)):
-			ingredientList.pop_front()
-	for i in range(len(ingredientList)):
-		spawnIngredientButton(ingredientList[i])
+#	ingredientList += ingredients
+#	#If ingredientList is greater than maxIngredients, remove the first x items from the list that is the length of the ingredients
+#	if len(ingredientList) > maxIngredients:
+#		for i in range(len(ingredients)):
+#			ingredientList.pop_front()
+#	for i in range(len(ingredientList)):
+#		spawnIngredientButton(ingredientList[i])
+	for i in range(len(ingredients)):
+		var ingredientToAdd = InventoryIngredient.new(ingredients[i].name, ingredients[i].expiration, ingredients[i].img)
+		addIngredient(ingredientToAdd)
+		
 
 func addIngredient(ingredient):
 	ingredientList.append(ingredient)
