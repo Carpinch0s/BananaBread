@@ -7,7 +7,7 @@
 [ext_resource path="res://Cookware.tscn" type="PackedScene" id=5]
 [ext_resource path="res://FinishedDish.tscn" type="PackedScene" id=7]
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" groups=["selected"]]
 script = ExtResource( 4 )
 finishedDishScene = ExtResource( 7 )
 
