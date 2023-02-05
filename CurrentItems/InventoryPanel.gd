@@ -13,12 +13,17 @@ func _ready():
 	
 	#if ingredientsList is empty, add a random ingredient
 	#if len(ingredientList) == 0:
-	ingredientList.append(InventoryIngredient.new("bread",4))
-	ingredientList.append(InventoryIngredient.new("eggs",3))
-	ingredientList.append(InventoryIngredient.new("milk",4))
+	ingredientList.append(InventoryIngredient.new("first",4))
+	ingredientList.append(InventoryIngredient.new("second",3))
+	ingredientList.append(InventoryIngredient.new("third",4))
+	ingredientList.append(InventoryIngredient.new("fourth",4))
+	ingredientList.append(InventoryIngredient.new("fifth",3))
+	ingredientList.append(InventoryIngredient.new("sixth",4))
+	ingredientList.append(InventoryIngredient.new("seventh",4))
+	ingredientList.append(InventoryIngredient.new("eighth",3))
+	ingredientList.append(InventoryIngredient.new("nineth",4))
 	#spawn current ingredient list
-	for i in range(len(ingredientList)):
-		spawnIngredientButton(ingredientList[i])
+	addIngredients(ingredientList)
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -31,16 +36,9 @@ func pushIngredients():
 
 #Add ingredients to the list and remove the first item if the list is too long
 func addIngredients(ingredients):
-#	ingredientList += ingredients
-#	#If ingredientList is greater than maxIngredients, remove the first x items from the list that is the length of the ingredients
-#	if len(ingredientList) > maxIngredients:
-#		for i in range(len(ingredients)):
-#			ingredientList.pop_front()
-#	for i in range(len(ingredientList)):
-#		spawnIngredientButton(ingredientList[i])
 	for i in range(len(ingredients)):
-		var ingredientToAdd = InventoryIngredient.new(ingredients[i].name, ingredients[i].expiration, ingredients[i].img)
-		addIngredient(ingredientToAdd)
+		#var ingredientToAdd = InventoryIngredient.new(ingredients[i].name, ingredients[i].expiration, ingredients[i].img)
+		addIngredient(ingredients[i])
 		
 
 func addIngredient(ingredient):
@@ -67,10 +65,7 @@ func incrementExpiration():
 func generateIngredientButton(ingredient):
 	var card = ingredientCard.instance()
 	get_node("InventoryHbox").add_child(card)
-	card.get_node("Image/VBoxContainer/name").text = ingredient.ingredientName
-	card.get_node("Image/VBoxContainer/img").texture = load(ingredient.ingredientImage)
-	card.get_node("Image/VBoxContainer/expiration").text = str(ingredient.expiration)
-	
+	card.addCardData(ingredient.name, ingredient.img, ingredient.expiration)
 	return card
 	
 func spawnIngredientButton(ingredient):

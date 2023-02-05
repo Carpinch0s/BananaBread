@@ -4,14 +4,13 @@ extends Control
 # var a = 2
 # var b = "text"
 
-var ingredientName: String
 var expiration: int
 var isSelected: bool
-var ingredientImage: String
+var img: String
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print("Ingredient " + ingredientName + " created with expiration " + str(expiration))
+	print("Ingredient " + name + " created with expiration " + str(expiration))
 	pass # Replace with function body.
 
 
@@ -20,9 +19,9 @@ func _ready():
 #	pass
 
 func _init(newName = "default", newAge = 4, newImage = "res://icon.png"):
-	ingredientName = newName
+	name = newName
 	expiration = newAge
-	ingredientImage = newImage
+	img = newImage
 	isSelected = false
 	
 

@@ -36,3 +36,11 @@ func toggleSelected():
 		selected = true
 		get_node("Image").color = Color(0.556055, 0.570313, 0.499023)
 		add_to_group("selected")
+		
+func addCardData(ingredientName, img, expiration):
+	self.ingredientName = ingredientName
+	self.img = img
+	self.expiration = expiration
+	get_node("Image/VBoxContainer/img").texture = load(img)
+	get_node("Image/VBoxContainer/name").text = ingredientName
+	get_node("Image/VBoxContainer/expiration").text = str(expiration)
