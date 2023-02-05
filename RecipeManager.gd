@@ -3,25 +3,25 @@ extends Node
 var ingredients = {
 	"banana" : {
 		"name": "Banana",
-		"img": "banana.png",
+		"img": "res://Images/Banana.png",
 		"expiration" : 2
 	},
 	
 	"flour" : {
 		"name": "Flour",
-		"img": "flour.png",
+		"img": "res://Images/Flour.png",
 		"expiration" : 7
 	},
 	
 	"egg" : {
 		"name": "Egg",
-		"img": "egg.png",
+		"img": "res://Images/Egg.png",
 		"expiration" : 4
 	},
 	
 	"sugar" : {
 		"name": "Sugar",
-		"img": "sugar.png",
+		"img": "res://Images/Sugar.png",
 		"expiration" : 8
 	},
 }
