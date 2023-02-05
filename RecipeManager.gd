@@ -35,25 +35,11 @@ var dishOptions = [
 	},
 
 	{
-		"name": "Banana Bread",
-		"ingredients": ["Banana", "Flour", "Egg"],
-		"cookware": "OvenDish",
-		"sprite": "temp.png"
-	},
-
-	{
 		"name": "Bananas Foster",
 		"ingredients": ["Banana", "Sugar"],
 		"cookware": "Pan",
-		"sprite": "temp.png"
+		"sprite": load("res://Images/BananasFoster.png")
 	},
-
-	{
-		"name": "Bananas Foster",
-		"ingredients": ["Banana", "Sugar", "Milk"],
-		"cookware": "Pan",
-		"sprite": "temp.png"
-	}
 ]
 
 # Called when the node enters the scene tree for the first time.
@@ -63,6 +49,10 @@ func _ready():
 func getFinishedDish(cookwareType, ingredients):
 	for dish in dishOptions:
 		if (dish.cookware == cookwareType):
+			print(str(dish.ingredients))
+			for dishIngredient in dish.ingredients:
+				if !ingredients.has(dishIngredient):
+					break
 			return dish
 			
 	var dict = {"name": "Invalid"}
