@@ -21,6 +21,7 @@ margin_left = 760.0
 
 [node name="Saucepan" parent="." instance=ExtResource( 5 )]
 position = Vector2( 237, 260 )
+Type = "Pan"
 
 [node name="Cookpot" parent="." instance=ExtResource( 5 )]
 position = Vector2( 112, 262 )

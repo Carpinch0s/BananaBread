@@ -21,7 +21,7 @@ func _on_CookwarePressed(cookwareType):
 	var string = "clicked on " + cookwareType
 	
 	# temp ingredients
-	var ingredients = ["banana"]
+	var ingredients = ["Banana", "Flour", "Egg", "Sugar"]
 	var finishedDishData = $RecipeManager.getFinishedDish(cookwareType, ingredients)
 	if finishedDishData.name == "Invalid":
 		return
