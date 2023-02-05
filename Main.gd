@@ -1,5 +1,6 @@
 extends Node
 
+export(PackedScene) var cookwareScene
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -19,4 +20,14 @@ func _ready():
 	
 	var inventoryData = $RecipeManager.generateNewIngredients(3)
 	$InventoryPanel.addIngredients(inventoryData)
+	
+
+
+func _on_CookwarePressed(id):
+	var string = "clicked on " + id
+	print(string)
+	var completedItem = cookwareScene.instance()
+	completedItem.position = Vector2(10,10)
+	completedItem.Type = "Grill"
+	add_child(completedItem)
 	

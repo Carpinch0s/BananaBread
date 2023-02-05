@@ -1,18 +1,48 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://CurrentItems/InventoryPanel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UpcomingItems/UpcomingIngredientPanel.tscn" type="PackedScene" id=2]
 [ext_resource path="res://RecipeManager.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Main.gd" type="Script" id=4]
+[ext_resource path="res://Cookware.tscn" type="PackedScene" id=5]
 
-[node name="Node" type="Node"]
+[node name="Main" type="Node"]
+script = ExtResource( 4 )
+cookwareScene = ExtResource( 5 )
 
 [node name="InventoryPanel" parent="." instance=ExtResource( 1 )]
 margin_top = 400.0
 
 [node name="UpcomingIngredientPanel" parent="." instance=ExtResource( 2 )]
-margin_left = 3092.0
-margin_top = 4.0
-margin_right = 2068.0
-margin_bottom = 4.0
+margin_left = 760.0
 
 [node name="RecipeManager" parent="." instance=ExtResource( 3 )]
+
+[node name="Saucepan" parent="." instance=ExtResource( 5 )]
+position = Vector2( 237, 260 )
+
+[node name="Cookpot" parent="." instance=ExtResource( 5 )]
+position = Vector2( 112, 262 )
+Type = "Cookpot"
+BoxColor = Color( 0.152941, 0.568627, 0.352941, 1 )
+
+[node name="OvenBreadpan" parent="." instance=ExtResource( 5 )]
+position = Vector2( 684, 76 )
+Type = "Breadpan"
+BoxColor = Color( 0.568627, 0.0745098, 0.541176, 1 )
+
+[node name="OvenCassarole" parent="." instance=ExtResource( 5 )]
+position = Vector2( 681, 173 )
+Type = "Cassarole"
+BoxColor = Color( 0.0784314, 0.72549, 0.360784, 1 )
+
+[node name="Grill" parent="." instance=ExtResource( 5 )]
+position = Vector2( 345, 83 )
+Type = "Grill"
+BoxColor = Color( 0.788235, 0.352941, 0.184314, 1 )
+
+[connection signal="CookwarePressed" from="Saucepan" to="." method="_on_CookwarePressed"]
+[connection signal="CookwarePressed" from="Cookpot" to="." method="_on_CookwarePressed"]
+[connection signal="CookwarePressed" from="OvenBreadpan" to="." method="_on_CookwarePressed"]
+[connection signal="CookwarePressed" from="OvenCassarole" to="." method="_on_CookwarePressed"]
+[connection signal="CookwarePressed" from="Grill" to="." method="_on_CookwarePressed"]

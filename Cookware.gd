@@ -1,16 +1,16 @@
 extends Area2D
 
+signal CookwarePressed(id)
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
+export var Type = "Saucepan"
+export var BoxColor = Color(100,100,0,1)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$Label.text = Type
+	$ColorRect.color = BoxColor
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _on_ColorRect_gui_input(event):
+	if event is InputEventMouseButton:
+		if event.pressed and event.button_index == BUTTON_LEFT:
+			emit_signal('CookwarePressed', Type)
