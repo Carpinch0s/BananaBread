@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Control",
+"class": "InventoryIngredient",
+"language": "GDScript",
+"path": "res://CurrentItems/InventoryIngredient.gd"
+} ]
+_global_script_class_icons={
+"InventoryIngredient": ""
+}
+
 [application]
 
 config/name="Banana Bread"
