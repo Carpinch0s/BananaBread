@@ -11,13 +11,13 @@ func _ready():
 	
 	#if ingredientsList is empty, add a random ingredient
 	#if len(ingredientList) == 0:
-	var ingredientOne = InventoryIngredient.new()
-	spawnIngredientButton(ingredientOne)
-	#addIngredients([InventoryIngredient.new(), 
-	#InventoryIngredient.new(),
-	#InventoryIngredient.new()])
-	print("What the fuck")
-
+	ingredientList.append(InventoryIngredient.new("bread",4))
+	ingredientList.append(InventoryIngredient.new("eggs",3))
+	ingredientList.append(InventoryIngredient.new("milk",4))
+	#spawn current ingredient list
+	for i in range(len(ingredientList)):
+		spawnIngredientButton(ingredientList[i])
+		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
@@ -37,13 +37,19 @@ func addIngredients(ingredients):
 	for i in range(len(ingredientList)):
 		spawnIngredientButton(ingredientList[i])
 
-#This function ages the ingredients in the list and removes them if they are too old
-func ageIngredients():
+func addIngredient(ingredient):
+	ingredientList.append(ingredient)
+	if len(ingredientList) > maxIngredients:
+		ingredientList.pop_front()
+	spawnIngredientButton(ingredient)
+
+#This function increments the expiration of the ingredients in the list and removes them if they are too old
+func incrementExpiration():
 	for i in range(len(ingredientList)):
-		ingredientList[i].ageIngredient()
+		ingredientList[i].expirationIncrement()
 		
 		#if the ingredient is too old, add it to the list of ingredients to remove
-		if ingredientList[i].age <= 0:
+		if ingredientList[i].expiration <= 0:
 			ingredientsToRemove.append(ingredientList[i])
 	
 	#remove the ingredients from the list
@@ -60,4 +66,5 @@ func generateIngredientButton(ingredient):
 	
 func spawnIngredientButton(ingredient):
 	var button = generateIngredientButton(ingredient)
+	button.rect_min_size.x = 100.0
 	get_node("InventoryHbox").add_child(button)

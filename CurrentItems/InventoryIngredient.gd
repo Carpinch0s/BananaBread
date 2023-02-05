@@ -5,12 +5,12 @@ extends Control
 # var b = "text"
 
 var ingredientName: String
-var age: int
+var expiration: int
 var isSelected: bool
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print("Ingredient " + ingredientName + " created with age " + str(age))
+	print("Ingredient " + ingredientName + " created with expiration " + str(expiration))
 	pass # Replace with function body.
 
 
@@ -18,9 +18,9 @@ func _ready():
 #func _process(delta):
 #	pass
 
-func init(newName = "default", newAge = 4):
+func _init(newName = "default", newAge = 4):
 	ingredientName = newName
-	age = newAge
+	expiration = newAge
 	isSelected = false
 	
 
@@ -35,5 +35,5 @@ func toggleSelected():
 		isSelected = true
 		add_to_group("selected")
 		
-func ageIngredient():
-	age -= 1
+func expirationIncrement():
+	expiration -= 1
