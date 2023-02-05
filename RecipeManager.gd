@@ -60,8 +60,13 @@ var dishOptions = [
 func _ready():
 	randomize()
 	
-func getFinishedDish(_cookwareType, _ingredients):
-	return dishOptions[0]
+func getFinishedDish(cookwareType, ingredients):
+	for dish in dishOptions:
+		if (dish.cookware == cookwareType):
+			return dish
+			
+	var dict = {"name": "Invalid"}
+	return dict
 
 func generateNewIngredients(count):
 	var row = []
