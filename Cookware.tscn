@@ -28,4 +28,6 @@ margin_right = 39.0
 margin_bottom = 40.0
 text = "TEST STRING"
 
+[node name="Sprite" type="Sprite" parent="."]
+
 [connection signal="gui_input" from="ColorRect" to="." method="_on_ColorRect_gui_input"]
