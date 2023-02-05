@@ -5,6 +5,8 @@ var ingredientList = []
 export var maxIngredients = 10
 var ingredientsToRemove = []
 
+var ingredientCard = preload("res://CurrentItems/IngredientCard.tscn")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#pass # Replace with function body.
@@ -63,12 +65,15 @@ func incrementExpiration():
 			
 #Generate a button for an ingredient
 func generateIngredientButton(ingredient):
-	var button = Button.new()
-	button.text = ingredient.ingredientName
-	button.connect("pressed", self, "onIngredientButtonPressed", [ingredient])
-	return button
+	var card = ingredientCard.instance()
+	get_node("InventoryHbox").add_child(card)
+	card.get_node("Image/VBoxContainer/name").text = ingredient.ingredientName
+	card.get_node("Image/VBoxContainer/img").texture = load(ingredient.ingredientImage)
+	card.get_node("Image/VBoxContainer/expiration").text = str(ingredient.expiration)
+	
+	return card
 	
 func spawnIngredientButton(ingredient):
-	var button = generateIngredientButton(ingredient)
-	button.rect_min_size.x = 100.0
-	get_node("InventoryHbox").add_child(button)
+	var card = generateIngredientButton(ingredient)
+	card.rect_min_size.x = 100.0
+	
